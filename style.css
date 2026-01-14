@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+:root {
+    --primary-color: #ff6b6b;
+    /* Reddish for First Aid */
+    --secondary-color: #4ecdc4;
+    /* Teal for calmness */
+    --accent-color: #ffe66d;
+    /* Yellow for attention */
+    --text-color: #2d3436;
+    --bg-color: #f7f1e3;
+    --card-bg: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Jua', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+/* Header Styles */
+header {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+header h1 {
+    font-size: 3rem;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+header p {
+    font-size: 1.5rem;
+    opacity: 0.95;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 20px;
+}
+
+/* Decoration in Header */
+header::before {
+    content: '🚑';
+    font-size: 6rem;
+    position: absolute;
+    top: 10px;
+    left: 5%;
+    transform: rotate(-15deg);
+    opacity: 0.3;
+    animation: float 3s ease-in-out infinite;
+}
+
+header::after {
+    content: '🏥';
+    font-size: 6rem;
+    position: absolute;
+    bottom: 10px;
+    right: 5%;
+    transform: rotate(15deg);
+    opacity: 0.3;
+    animation: float 3s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(-15deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(-15deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(-15deg);
+    }
+}
+
+/* Menu Container */
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1000px;
+    width: 90%;
+    padding: 1rem;
+    margin-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+    .menu-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Menu Card Styles */
+.menu-card {
+    background-color: var(--card-bg);
+    border-radius: 25px;
+    padding: 2rem;
+    text-decoration: none;
+    color: var(--text-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Bouncy transition */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 5px solid transparent;
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.menu-card h2 {
+    font-size: 2rem;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.menu-card p {
+    font-size: 1.2rem;
+    color: #636e72;
+}
+
+.icon {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.1));
+    transition: transform 0.3s;
+}
+
+.menu-card:hover .icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+/* Specific Colors for Cards */
+.card-1 {
+    border-color: #ff7675;
+}
+
+.card-2 {
+    border-color: #fd79a8;
+}
+
+.card-3 {
+    border-color: #74b9ff;
+}
+
+.card-4 {
+    border-color: #55efc4;
+}
+
+.card-1:hover {
+    background-color: #fff0f0;
+}
+
+.card-2:hover {
+    background-color: #fff0f5;
+}
+
+.card-3:hover {
+    background-color: #f0f8ff;
+}
+
+.card-4:hover {
+    background-color: #f0fff4;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+    padding: 2rem;
+    text-align: center;
+    color: #636e72;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+}
